@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import ClientDetailPage from "./pages/ClientDetailPage";
+import ClientsListPage from "./pages/ClientsListPage";
 const ProtectedRoute = ({ isAuthenticated, children }) => {
     if (!isAuthenticated) {
         return <Navigate to="/login" replace />;
@@ -31,6 +33,8 @@ const App = () => {
                 />
                 <Route path="/signup" element={<SignupPage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/clients/client-detail" element={<ClientDetailPage />} />
+                <Route path="/clients" element={<ClientsListPage />} />
                 {/* <Route
                     path="/dashboard"
                     element={
@@ -38,7 +42,7 @@ const App = () => {
                             <DashboardPage />
                         </ProtectedRoute>
                     }
-                />
+                /> */}
                 <Route
                     path="*"
                     element={
@@ -48,7 +52,7 @@ const App = () => {
                             <Navigate to="/login" replace />
                         )
                     }
-                /> */}
+                /> 
             </Routes>
         </Router>
     );
