@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
+import ProjectGridPage from './pages/ProjectGridPage'
+import ProjectRowPage from './pages/ProjectRowPage'
 import ClientDetailPage from "./pages/ClientDetailPage";
 import ClientsListPage from "./pages/ClientsListPage";
 const ProtectedRoute = ({ isAuthenticated, children }) => {
@@ -35,6 +37,9 @@ const App = () => {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/clients/client-detail" element={<ClientDetailPage />} />
                 <Route path="/clients" element={<ClientsListPage />} />
+
+                <Route path="/projects/grid" element={<ProjectGridPage />} />
+                <Route path="/projects/row" element={<ProjectRowPage />} />
                 {/* <Route
                     path="/dashboard"
                     element={
