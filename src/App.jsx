@@ -47,7 +47,7 @@ const App = () => {
                 <Route path="/clients" element={<ClientsListPage />} />
 
                 {/* Project Pages */}
-                <Route path="/project" element={<Project />} />
+                <Route path="/projects" element={<Project />} />
                 <Route path="/project/:id" element={<ProjectDetail />} />
 
                 {/* Catch All Route */}
