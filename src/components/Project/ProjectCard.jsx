@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className="bg-white p-4 rounded-lg shadow border border-gray-400">
+    <div className="bg-white p-4 rounded-lg shadow">
       <div className="flex justify-between items-start">
         <div>
           <h3 className="text-lg font-semibold text-indigo-600">{project.name}</h3>

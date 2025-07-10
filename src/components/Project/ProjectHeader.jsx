@@ -9,7 +9,7 @@ const ProjectHeader = ({ onViewChange, view }) => {
   return (
     <div className="flex justify-between items-center mb-6">
       <div>
-        <button className="flex items-center bg-gray-100 text-sm text-gray-700 px-4 py-2 rounded-md border hover:bg-gray-200 transition">
+        <button className="flex items-center bg-gray-300 text-sm text-black px-4 py-2 rounded-md hover:bg-gray-200 transition">
           Filters
           <img className="ml-2 h-4 w-4" src={dropdown} />
         </button>

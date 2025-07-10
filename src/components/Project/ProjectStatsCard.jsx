@@ -1,6 +1,6 @@
 const ProjectStatsCard = ({ title, value, subtitle, icon, change, changeColor }) => {
   return (
-    <div className="bg-white shadow-sm rounded-md border p-5">
+    <div className="bg-white shadow-sm rounded-md p-5">
       <div className="flex justify-between items-center mb-2">
         <h4 className="text-sm font-medium text-gray-600">{title}</h4>
         <span className="text-xl">{icon}</span>
