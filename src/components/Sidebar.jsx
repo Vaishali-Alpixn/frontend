@@ -6,6 +6,7 @@ import { MdGroups, MdAnalytics, MdAutoAwesome } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
 import { Link, useLocation } from "react-router-dom";
 
+// Menu configuration for sidebar
 const menuItems = [
   { label: "Home", icon: <IoMdHome />, path: "/" },
   { label: "Clients", icon: <FaGlobeAmericas />, path: "/clients" },
@@ -16,9 +17,17 @@ const menuItems = [
   { label: "Settings", icon: <IoMdSettings />, path: "/settings" },
 ];
 
-
 const Sidebar = () => {
   const location = useLocation();
+
+  // Added support for nested route highlighting
+  // For example: '/project/1' (detail page) also highlights 'Projects'
+  const isActive = (itemPath) => {
+    if (itemPath === "/projects" && location.pathname.startsWith("/project")) {
+      return true; // Highlight 'Projects' for both /projects and /project/:id
+    }
+    return location.pathname === itemPath;
+  };
 
   return (
     <div className="h-screen w-64 bg-white border-r shadow border-gray-300 p-6 flex flex-col justify-between">
@@ -32,8 +41,8 @@ const Sidebar = () => {
             <Link to={item.path} key={index}>
               <div
                 className={`flex items-center space-x-3 p-2 rounded-md cursor-pointer transition duration-200 ${
-                  location.pathname === item.path
-                    ? "bg-gray-800 text-white"
+                  isActive(item.path)
+                    ? "bg-gray-800 text-white" // 👈 Highlight if active
                     : "text-black hover:bg-gray-800 hover:text-white"
                 }`}
               >
